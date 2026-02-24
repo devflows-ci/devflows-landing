@@ -6,6 +6,7 @@ import {
   Shield,
   GitBranch,
 } from "lucide-react";
+import { useInView } from "../hooks/useInView";
 
 const features = [
   {
@@ -59,6 +60,9 @@ const features = [
 ];
 
 export default function Features() {
+  const { ref: headerRef, inView: headerVisible } = useInView();
+  const { ref: gridRef, inView: gridVisible } = useInView({ threshold: 0.05 });
+
   return (
     <section id="features" className="relative scroll-mt-20 py-24 lg:py-32">
       {/* Background */}
@@ -66,8 +70,13 @@ export default function Features() {
 
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
-        <div className="mx-auto mb-16 max-w-2xl text-center">
-          <p className="mb-3 text-sm font-semibold tracking-wide text-violet-600 uppercase dark:text-violet-400">
+        <div
+          ref={headerRef}
+          className={`mx-auto mb-16 max-w-2xl text-center transition-all duration-700 ${
+            headerVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+          }`}
+        >
+          <p className="mb-3 text-sm font-semibold tracking-wide uppercase text-violet-600 dark:text-violet-400">
             Everything you need
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
@@ -80,11 +89,14 @@ export default function Features() {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((f) => (
+        <div ref={gridRef} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {features.map((f, i) => (
             <div
               key={f.title}
-              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 dark:border-slate-700 dark:bg-slate-900 dark:shadow-black/10 dark:hover:border-slate-600 dark:hover:shadow-black/20"
+              className={`group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5 dark:border-slate-700 dark:bg-slate-900 dark:shadow-black/10 dark:hover:border-slate-600 dark:hover:shadow-black/20 ${
+                gridVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
+              style={{ transitionDelay: gridVisible ? `${i * 100}ms` : "0ms" }}
             >
               {/* Accent glow on hover */}
               <div
@@ -92,7 +104,7 @@ export default function Features() {
               />
 
               <div
-                className={`relative mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br ${f.gradient} shadow-lg ${f.shadow}`}
+                className={`relative mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br ${f.gradient} shadow-lg ${f.shadow} transition-transform duration-300 group-hover:scale-110`}
               >
                 <f.icon className="h-6 w-6 text-white" />
               </div>

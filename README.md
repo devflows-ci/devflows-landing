@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+# DevFlows Landing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Public website for DevFlows (marketing + docs), built as a standalone React app.
 
-Currently, two official plugins are available:
+This project is part of the DevFlows monorepo:
+- `../devflows-fe`: authenticated product app
+- `../devflows-be`: backend API
+- `../devflows-deployment-action`: GitHub Action integration
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+`devflows-landing` provides:
+- marketing landing page at `/`
+- public docs page at `/docs`
+- light/dark theme toggle
+- responsive navigation with section anchors
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Main page sections:
+- Hero
+- Features
+- How It Works
+- Integrations
+- CTA
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19
+- TypeScript
+- Vite 7
+- Tailwind CSS 4
+- React Router 7
+- Lucide React
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Routing
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- `/` -> Landing page (`src/pages/Landing.tsx`)
+- `/docs` -> Product docs overview (`src/pages/Docs.tsx`)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+
+```text
+src/
+├── App.tsx
+├── main.tsx
+├── index.css
+├── hooks/
+│   └── useTheme.tsx
+├── pages/
+│   ├── Landing.tsx
+│   └── Docs.tsx
+└── components/
+    ├── Navbar.tsx
+    ├── Hero.tsx
+    ├── Features.tsx
+    ├── HowItWorks.tsx
+    ├── Integrations.tsx
+    ├── CTA.tsx
+    └── Footer.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Prerequisites:
+- Node.js `>=22.12.0` (or `>=20.19.0`)
+- npm
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Install and run:
+
+```bash
+cd devflows-landing
+npm install
+npm run dev
 ```
+
+App URL:
+- `http://localhost:5173` (default Vite port)
+
+## Scripts
+
+- `npm run dev` -> start dev server
+- `npm run build` -> type-check + production build
+- `npm run lint` -> lint sources
+- `npm run preview` -> preview production build
+
+## Notes
+
+- CTA links are currently placeholders (`href="#"`) and should be wired to the production app URL.
+- The docs content in `/docs` mirrors the current platform capabilities and should be updated when backend/frontend contracts change.
+
+## License
+
+Private - All rights reserved.

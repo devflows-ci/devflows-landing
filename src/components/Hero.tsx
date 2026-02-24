@@ -1,13 +1,14 @@
 import { ArrowRight, Sparkles } from "lucide-react";
+import { APP_URL } from "../config";
 
 export default function Hero() {
   return (
     <section className="relative pb-20 lg:pb-32" style={{ paddingTop: "clamp(10rem, 15vw, 14rem)" }}>
       {/* Background decorations */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-violet-500/10 blur-[100px] dark:bg-violet-500/5" />
-        <div className="absolute top-20 -left-40 h-[400px] w-[400px] rounded-full bg-purple-500/8 blur-[100px] dark:bg-purple-500/5" />
-        <div className="absolute bottom-0 left-1/2 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-violet-400/5 blur-[100px]" />
+        <div className="absolute -top-40 -right-40 h-[500px] w-[500px] animate-pulse-glow rounded-full bg-violet-500/10 blur-[100px] dark:bg-violet-500/5" />
+        <div className="absolute top-20 -left-40 h-[400px] w-[400px] animate-pulse-glow rounded-full bg-purple-500/8 blur-[100px] [animation-delay:1.5s] dark:bg-purple-500/5" />
+        <div className="absolute bottom-0 left-1/2 h-[300px] w-[600px] -translate-x-1/2 animate-pulse-glow rounded-full bg-violet-400/5 blur-[100px] [animation-delay:3s]" />
         <div
           className="absolute inset-0 opacity-[0.03] dark:opacity-[0.04]"
           style={{
@@ -19,8 +20,11 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto max-w-7xl px-6 text-center">
-        {/* Badge */}
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-4 py-1.5 dark:border-violet-500/20 dark:bg-violet-500/10">
+        {/* Badge — staggered entrance */}
+        <div
+          className="mb-8 inline-flex animate-fade-up items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-4 py-1.5 dark:border-violet-500/20 dark:bg-violet-500/10"
+          style={{ animationDelay: "0.1s" }}
+        >
           <Sparkles className="h-4 w-4 text-violet-600 dark:text-violet-400" />
           <span className="text-sm font-medium text-violet-700 dark:text-violet-300">
             Developer Workflow Platform
@@ -28,7 +32,10 @@ export default function Hero() {
         </div>
 
         {/* Motto */}
-        <h1 className="mx-auto max-w-4xl text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl dark:text-white">
+        <h1
+          className="mx-auto max-w-4xl animate-fade-up text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl dark:text-white"
+          style={{ animationDelay: "0.25s" }}
+        >
           Little teams,{" "}
           <span className="bg-linear-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent dark:from-violet-400 dark:to-purple-400">
             big projects
@@ -36,32 +43,41 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl dark:text-slate-400">
+        <p
+          className="mx-auto mt-6 max-w-2xl animate-fade-up text-lg leading-relaxed text-slate-600 sm:text-xl dark:text-slate-400"
+          style={{ animationDelay: "0.4s" }}
+        >
           Connect your tasks, deployments, and metrics in one place.
           DevFlows gives small teams the visibility and control they need
           to ship with confidence.
         </p>
 
         {/* CTAs */}
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div
+          className="mt-10 flex animate-fade-up flex-col items-center justify-center gap-4 sm:flex-row"
+          style={{ animationDelay: "0.55s" }}
+        >
           <a
-            href="#"
-            className="group inline-flex h-12 items-center gap-2 rounded-xl bg-linear-to-r from-violet-600 to-purple-600 px-8 text-base font-semibold text-white no-underline shadow-xl shadow-purple-500/25 transition-all hover:shadow-purple-500/40 hover:brightness-110"
+            href={APP_URL}
+            className="group inline-flex h-12 items-center gap-2 rounded-xl bg-linear-to-r from-violet-600 to-purple-600 px-8 text-base font-semibold text-white no-underline shadow-xl shadow-purple-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/40 hover:brightness-110"
           >
             Start for free
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
           <a
             href="#features"
-            className="inline-flex h-12 items-center gap-2 rounded-xl border border-slate-300 bg-white px-8 text-base font-semibold text-slate-700 no-underline shadow-sm transition-all hover:border-slate-400 hover:shadow-md dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-slate-500"
+            className="inline-flex h-12 items-center gap-2 rounded-xl border border-slate-300 bg-white px-8 text-base font-semibold text-slate-700 no-underline shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-slate-400 hover:shadow-md dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-slate-500"
           >
             See how it works
           </a>
         </div>
 
         {/* Hero visual — Kanban board mockup */}
-        <div className="relative mx-auto mt-20 max-w-5xl">
-          <div className="absolute -inset-4 rounded-2xl bg-linear-to-r from-violet-500/20 via-purple-500/20 to-violet-500/20 blur-2xl" />
+        <div
+          className="relative mx-auto mt-20 max-w-5xl animate-scale-in"
+          style={{ animationDelay: "0.7s" }}
+        >
+          <div className="absolute -inset-4 animate-pulse-glow rounded-2xl bg-linear-to-r from-violet-500/20 via-purple-500/20 to-violet-500/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-slate-300 bg-white shadow-2xl shadow-slate-900/10 dark:border-slate-600 dark:bg-slate-900 dark:shadow-black/30">
             {/* Window chrome */}
             <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-50 px-4 py-3 dark:border-slate-700 dark:bg-slate-800">
@@ -144,7 +160,7 @@ export default function Hero() {
                           blue: "bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-400",
                         };
                         return (
-                          <div key={card.key} className="rounded-lg border border-slate-200 bg-white p-2.5 shadow-sm dark:border-slate-600 dark:bg-slate-900 sm:p-3">
+                          <div key={card.key} className="rounded-lg border border-slate-200 bg-white p-2.5 shadow-sm transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-md dark:border-slate-600 dark:bg-slate-900 sm:p-3">
                             <div className="mb-1 font-mono text-[10px] text-slate-400 dark:text-slate-500 sm:text-[11px]">
                               {card.key}
                             </div>

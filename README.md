@@ -61,8 +61,8 @@ src/
 ## Getting Started
 
 Prerequisites:
-- Node.js `>=22.12.0` (or `>=20.19.0`)
-- npm
+- Node.js LTS `>=24.13.1`
+- npm `>=11.8.0`
 
 Install and run:
 

@@ -6,9 +6,9 @@ export default function Hero() {
     <section className="relative pb-20 lg:pb-32" style={{ paddingTop: "clamp(10rem, 15vw, 14rem)" }}>
       {/* Background decorations */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-40 h-[500px] w-[500px] animate-pulse-glow rounded-full bg-violet-500/10 blur-[100px] dark:bg-violet-500/5" />
-        <div className="absolute top-20 -left-40 h-[400px] w-[400px] animate-pulse-glow rounded-full bg-purple-500/8 blur-[100px] [animation-delay:1.5s] dark:bg-purple-500/5" />
-        <div className="absolute bottom-0 left-1/2 h-[300px] w-[600px] -translate-x-1/2 animate-pulse-glow rounded-full bg-violet-400/5 blur-[100px] [animation-delay:3s]" />
+        <div className="absolute -top-40 -right-40 h-[500px] w-[500px] animate-pulse-glow rounded-full bg-emerald-500/10 blur-[100px] dark:bg-emerald-500/5" />
+        <div className="absolute top-20 -left-40 h-[400px] w-[400px] animate-pulse-glow rounded-full bg-teal-600/8 blur-[100px] [animation-delay:1.5s] dark:bg-teal-600/5" />
+        <div className="absolute bottom-0 left-1/2 h-[300px] w-[600px] -translate-x-1/2 animate-pulse-glow rounded-full bg-emerald-500/5 blur-[100px] [animation-delay:3s]" />
         <div
           className="absolute inset-0 opacity-[0.03] dark:opacity-[0.04]"
           style={{
@@ -22,11 +22,11 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl px-6 text-center">
         {/* Badge — staggered entrance */}
         <div
-          className="mb-8 inline-flex animate-fade-up items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-4 py-1.5 dark:border-violet-500/20 dark:bg-violet-500/10"
+          className="mb-8 inline-flex animate-fade-up items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 dark:border-emerald-500/20 dark:bg-emerald-500/10"
           style={{ animationDelay: "0.1s" }}
         >
-          <Sparkles className="h-4 w-4 text-violet-600 dark:text-violet-400" />
-          <span className="text-sm font-medium text-violet-700 dark:text-violet-300">
+          <Sparkles className="h-4 w-4 text-emerald-700 dark:text-emerald-500" />
+          <span className="text-sm font-medium text-emerald-800 dark:text-emerald-400">
             Developer Workflow Platform
           </span>
         </div>
@@ -37,7 +37,7 @@ export default function Hero() {
           style={{ animationDelay: "0.25s" }}
         >
           Little teams,{" "}
-          <span className="bg-linear-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent dark:from-violet-400 dark:to-purple-400">
+          <span className="bg-linear-to-r from-emerald-700 to-teal-700 bg-clip-text text-transparent dark:from-emerald-500 dark:to-teal-500">
             big projects
           </span>
         </h1>
@@ -47,9 +47,9 @@ export default function Hero() {
           className="mx-auto mt-6 max-w-2xl animate-fade-up text-lg leading-relaxed text-slate-600 sm:text-xl dark:text-slate-400"
           style={{ animationDelay: "0.4s" }}
         >
-          Connect your tasks, deployments, and metrics in one place.
-          DevFlows gives small teams the visibility and control they need
-          to ship with confidence.
+          Connect tasks, deployments, and engineering metrics in one workspace.
+          Start free, then scale with workspace-based plans as your team and
+          projects grow.
         </p>
 
         {/* CTAs */}
@@ -59,9 +59,9 @@ export default function Hero() {
         >
           <a
             href={APP_URL}
-            className="group inline-flex h-12 items-center gap-2 rounded-xl bg-linear-to-r from-violet-600 to-purple-600 px-8 text-base font-semibold text-white no-underline shadow-xl shadow-purple-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/40 hover:brightness-110"
+            className="group inline-flex h-12 items-center gap-2 rounded-xl bg-linear-to-r from-emerald-700 to-teal-700 px-8 text-base font-semibold text-white no-underline shadow-xl shadow-teal-600/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-teal-600/40 hover:brightness-110"
           >
-            Start for free
+            Start Free Workspace
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
           <a
@@ -77,7 +77,7 @@ export default function Hero() {
           className="relative mx-auto mt-20 max-w-5xl animate-scale-in"
           style={{ animationDelay: "0.7s" }}
         >
-          <div className="absolute -inset-4 animate-pulse-glow rounded-2xl bg-linear-to-r from-violet-500/20 via-purple-500/20 to-violet-500/20 blur-2xl" />
+          <div className="absolute -inset-4 animate-pulse-glow rounded-2xl bg-linear-to-r from-emerald-500/20 via-teal-600/20 to-emerald-500/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-slate-300 bg-white shadow-2xl shadow-slate-900/10 dark:border-slate-600 dark:bg-slate-900 dark:shadow-black/30">
             {/* Window chrome */}
             <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-50 px-4 py-3 dark:border-slate-700 dark:bg-slate-800">
@@ -93,7 +93,7 @@ export default function Hero() {
             <div className="p-4 sm:p-6">
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="h-8 w-8 rounded-lg bg-linear-to-br from-violet-500 to-purple-600" />
+                  <div className="h-8 w-8 rounded-lg bg-linear-to-br from-emerald-600 to-teal-700" />
                   <div className="text-left">
                     <div className="text-sm font-semibold text-slate-800 dark:text-slate-200">
                       Project Alpha
@@ -119,7 +119,7 @@ export default function Hero() {
                   {
                     title: "Backlog",
                     cards: [
-                      { key: "ALPHA-8", text: "Refactor auth module", tag: "enhancement", tagColor: "violet" as const },
+                      { key: "ALPHA-8", text: "Refactor auth module", tag: "enhancement", tagColor: "emerald" as const },
                       { key: "ALPHA-9", text: "Add rate limiting", tag: "security", tagColor: "red" as const },
                     ],
                   },
@@ -155,7 +155,7 @@ export default function Hero() {
                     <div className="space-y-2">
                       {col.cards.map((card) => {
                         const tagStyles = {
-                          violet: "bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-400",
+                          emerald: "bg-emerald-100 text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-500",
                           red: "bg-red-100 text-red-700 dark:bg-red-500/15 dark:text-red-400",
                           blue: "bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-400",
                         };

@@ -14,7 +14,7 @@ const steps = [
     step: "02",
     title: "Connect your pipeline",
     description:
-      "Drop a webhook into your CI/CD pipeline. DevFlows captures every deployment with environment, version, and status automatically.",
+      "Add deployment and task-move webhooks to your CI/CD pipeline. DevFlows tracks releases and can auto-move tasks across workflow columns.",
   },
   {
     icon: BarChart3,
@@ -46,7 +46,7 @@ export default function HowItWorks() {
             headerVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-violet-600 dark:text-violet-400">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-500">
             Simple workflow
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
@@ -64,7 +64,7 @@ export default function HowItWorks() {
           <div
             className="absolute top-6 right-0 left-0 hidden h-px lg:block"
             style={{
-              background: "linear-gradient(to right, transparent, var(--color-violet-300, #c4b5fd), transparent)",
+              background: "linear-gradient(to right, transparent, var(--color-emerald-400, #34d399), transparent)",
               opacity: stepsVisible ? 1 : 0,
               transform: stepsVisible ? "scaleX(1)" : "scaleX(0)",
               transition: "transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, opacity 0.5s ease 0.3s",
@@ -81,13 +81,13 @@ export default function HowItWorks() {
                 style={{ transitionDelay: stepsVisible ? `${i * 150}ms` : "0ms" }}
               >
                 {/* Step number */}
-                <div className="relative z-10 mx-auto mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-violet-600 to-purple-600 text-sm font-bold text-white shadow-lg shadow-purple-500/25 transition-transform duration-300 hover:scale-110">
+                <div className="relative z-10 mx-auto mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-emerald-700 to-teal-700 text-sm font-bold text-white shadow-lg shadow-teal-600/25 transition-transform duration-300 hover:scale-110">
                   {s.step}
                 </div>
 
                 {/* Icon */}
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-violet-50 transition-colors duration-300 hover:bg-violet-100 dark:bg-violet-500/10 dark:hover:bg-violet-500/15">
-                  <s.icon className="h-8 w-8 text-violet-600 dark:text-violet-400" />
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 transition-colors duration-300 hover:bg-emerald-100 dark:bg-emerald-500/10 dark:hover:bg-emerald-500/15">
+                  <s.icon className="h-8 w-8 text-emerald-700 dark:text-emerald-500" />
                 </div>
 
                 <h3 className="mb-2 text-lg font-semibold text-slate-900 dark:text-white">

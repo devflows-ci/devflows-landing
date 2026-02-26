@@ -9,12 +9,14 @@ export default function App() {
   return (
     <BrowserRouter>
       <ThemeProvider>
-        <div className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+        <div className="flex min-h-screen flex-col bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/docs" element={<Docs />} />
-          </Routes>
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/docs" element={<Docs />} />
+            </Routes>
+          </main>
           <Footer />
         </div>
       </ThemeProvider>

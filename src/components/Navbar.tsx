@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 no-underline">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-linear-to-br from-violet-500 to-purple-600 shadow-lg shadow-purple-500/20 transition-transform duration-300 hover:scale-105">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-linear-to-br from-emerald-600 to-teal-700 shadow-lg shadow-teal-600/20 transition-transform duration-300 hover:scale-105">
             <Rocket className="h-5 w-5 text-white" />
           </div>
           <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -44,18 +44,20 @@ export default function Navbar() {
             { href: scrollLink("#features"), label: "Features" },
             { href: scrollLink("#how-it-works"), label: "How it works" },
             { href: scrollLink("#integrations"), label: "Integrations" },
+            { href: scrollLink("#task-automation"), label: "Task Automation" },
+            { href: scrollLink("#pricing"), label: "Pricing" },
           ].map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="relative text-sm font-medium text-slate-600 no-underline transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-violet-500 after:transition-all after:duration-300 hover:text-violet-600 hover:after:w-full dark:text-slate-400 dark:hover:text-violet-400"
+              className="relative text-sm font-medium text-slate-600 no-underline transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-emerald-500 after:transition-all after:duration-300 hover:text-emerald-700 hover:after:w-full dark:text-slate-400 dark:hover:text-emerald-500"
             >
               {link.label}
             </a>
           ))}
           <Link
             to="/docs"
-            className="relative text-sm font-medium text-slate-600 no-underline transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-violet-500 after:transition-all after:duration-300 hover:text-violet-600 hover:after:w-full dark:text-slate-400 dark:hover:text-violet-400"
+            className="relative text-sm font-medium text-slate-600 no-underline transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-emerald-500 after:transition-all after:duration-300 hover:text-emerald-700 hover:after:w-full dark:text-slate-400 dark:hover:text-emerald-500"
           >
             Docs
           </Link>
@@ -72,7 +74,7 @@ export default function Navbar() {
 
           <a
             href={APP_URL}
-            className="inline-flex h-9 items-center rounded-lg bg-linear-to-r from-violet-600 to-purple-600 px-5 text-sm font-semibold text-white no-underline shadow-lg shadow-purple-500/25 transition-all duration-300 hover:scale-[1.03] hover:shadow-purple-500/40 hover:brightness-110"
+            className="inline-flex h-9 items-center rounded-lg bg-linear-to-r from-emerald-700 to-teal-700 px-5 text-sm font-semibold text-white no-underline shadow-lg shadow-teal-600/25 transition-all duration-300 hover:scale-[1.03] hover:shadow-teal-600/40 hover:brightness-110"
           >
             Get Started
           </a>
@@ -98,15 +100,17 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         className={`overflow-hidden border-t border-slate-200/60 bg-white transition-all duration-300 ease-in-out dark:border-slate-800/60 dark:bg-slate-950 md:hidden ${
-          open ? "max-h-64 opacity-100" : "max-h-0 border-t-0 opacity-0"
+          open ? "max-h-80 opacity-100" : "max-h-0 border-t-0 opacity-0"
         }`}
       >
         <div className="flex flex-col gap-4 px-6 py-4">
           <a href={scrollLink("#features")} onClick={() => setOpen(false)} className="text-sm font-medium text-slate-600 no-underline dark:text-slate-400">Features</a>
           <a href={scrollLink("#how-it-works")} onClick={() => setOpen(false)} className="text-sm font-medium text-slate-600 no-underline dark:text-slate-400">How it works</a>
           <a href={scrollLink("#integrations")} onClick={() => setOpen(false)} className="text-sm font-medium text-slate-600 no-underline dark:text-slate-400">Integrations</a>
+          <a href={scrollLink("#task-automation")} onClick={() => setOpen(false)} className="text-sm font-medium text-slate-600 no-underline dark:text-slate-400">Task Automation</a>
+          <a href={scrollLink("#pricing")} onClick={() => setOpen(false)} className="text-sm font-medium text-slate-600 no-underline dark:text-slate-400">Pricing</a>
           <Link to="/docs" onClick={() => setOpen(false)} className="text-sm font-medium text-slate-600 no-underline dark:text-slate-400">Docs</Link>
-          <a href={APP_URL} className="inline-flex h-9 items-center justify-center rounded-lg bg-linear-to-r from-violet-600 to-purple-600 px-5 text-sm font-semibold text-white no-underline">Get Started</a>
+          <a href={APP_URL} className="inline-flex h-9 items-center justify-center rounded-lg bg-linear-to-r from-emerald-700 to-teal-700 px-5 text-sm font-semibold text-white no-underline">Get Started</a>
         </div>
       </div>
     </nav>

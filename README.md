@@ -6,6 +6,7 @@ This project is part of the DevFlows monorepo:
 - `../devflows-fe`: authenticated product app
 - `../devflows-be`: backend API
 - `../devflows-deployment-action`: GitHub Action integration
+- `../devflows-move-task-action`: GitHub Action for task column automation
 
 ## Overview
 
@@ -19,8 +20,10 @@ Main page sections:
 - Hero
 - Features
 - How It Works
-- Integrations
+- Integrations (deployment webhooks)
+- Task Automation (task move webhook)
 - CTA
+- Pricing
 
 ## Tech Stack
 
@@ -43,6 +46,7 @@ src/
 ├── App.tsx
 ├── main.tsx
 ├── index.css
+├── config.ts
 ├── hooks/
 │   └── useTheme.tsx
 ├── pages/
@@ -54,7 +58,9 @@ src/
     ├── Features.tsx
     ├── HowItWorks.tsx
     ├── Integrations.tsx
+    ├── TaskAutomation.tsx
     ├── CTA.tsx
+    ├── Pricing.tsx
     └── Footer.tsx
 ```
 
@@ -84,7 +90,8 @@ App URL:
 
 ## Notes
 
-- CTA links are currently placeholders (`href="#"`) and should be wired to the production app URL.
+- CTA links are driven by `VITE_APP_URL` (`src/config.ts`). If not set, fallback is `#`.
+- Public support/contact references are standardized to `support@devflows.dev`.
 - The docs content in `/docs` mirrors the current platform capabilities and should be updated when backend/frontend contracts change.
 
 ## License

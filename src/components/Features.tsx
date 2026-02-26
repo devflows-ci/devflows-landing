@@ -14,8 +14,8 @@ const features = [
     title: "Kanban Board",
     description:
       "Drag-and-drop task management with custom columns, filters, and real-time optimistic updates. Stay organized without overhead.",
-    gradient: "from-violet-500 to-purple-600",
-    shadow: "shadow-violet-500/20",
+    gradient: "from-emerald-600 to-teal-700",
+    shadow: "shadow-emerald-600/20",
   },
   {
     icon: Rocket,
@@ -31,7 +31,7 @@ const features = [
     description:
       "Deployment frequency, lead time, change failure rate, and MTTR — all calculated automatically from your deployment data.",
     gradient: "from-emerald-500 to-teal-500",
-    shadow: "shadow-emerald-500/20",
+    shadow: "shadow-emerald-600/20",
   },
   {
     icon: Users,
@@ -54,7 +54,7 @@ const features = [
     title: "CI/CD Native",
     description:
       "Plug into GitHub Actions, GitLab CI, or any pipeline with a single webhook. Ready-made snippets get you started in minutes.",
-    gradient: "from-indigo-500 to-violet-500",
+    gradient: "from-indigo-500 to-emerald-600",
     shadow: "shadow-indigo-500/20",
   },
 ];
@@ -76,7 +76,7 @@ export default function Features() {
             headerVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
-          <p className="mb-3 text-sm font-semibold tracking-wide uppercase text-violet-600 dark:text-violet-400">
+          <p className="mb-3 text-sm font-semibold tracking-wide uppercase text-emerald-700 dark:text-emerald-500">
             Everything you need
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
